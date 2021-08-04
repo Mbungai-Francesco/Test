@@ -3,7 +3,7 @@
   <head><title>Moon</title></head>
   <body>
     <script>
-     /* var i,j;
+      var i,j;
      var n = 10; //prompt("Enter an interger n to generate a pascal's triangle of n lines :");
   /*for(i=0;i<n;i++)
   {
@@ -15,7 +15,7 @@
       if(!(i==j || j==0))
       a.push(k);
     }
-  }
+  }*/
   var a=[];
   var b=[];
     for(i=0;i<n;i++)
@@ -24,34 +24,14 @@
     {
       a.push(i);
       b.push(j);
-      var l=b[j-1].concat(a[i-1])
-      var k=a[i-1]+l;
+      var k=a[i-1]+b[j-1];
       if(i===j || j===0)
       document.write(1);
       if(!(i===j || j===0))
       document.write(k);   
     }
-    document.write("</br>"); 
-  } */
-  function pascals(numRows) {
-    if (numRows === 0) return [];
-    if (numRows === 1) return [[1]];
-    let result = [];
-    for (let row = 1; row <= numRows; row++) {
-        let arr = [];
-        for (let col = 0; col < row; col++) {
-            if (col === 0 || col === row - 1) {
-                arr.push(1);
-            } else {
-                arr.push((result[row-2][col-1] + result[row-2][col]));
-            }
-        }
-        result.push(arr);
-    }
-    return result;
-}
-numRows = prompt("Enter an interger n to generate a pascal's triangle of n lines :");
-pascals(numRows);
+    document.write("</br>");
+  }
     </script>
   </body>
 </html>
