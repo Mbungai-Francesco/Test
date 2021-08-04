@@ -3,30 +3,55 @@
   <head><title>Moon</title></head>
   <body>
     <script>
-      var n,i,j,p,m;
-      n = prompt("Enter an interger n to generate a pascal's triangle of n lines :");
-      var a=[n][n];
-  for(i=0;i<n;i++)
+     /* var i,j;
+     var n = 10; //prompt("Enter an interger n to generate a pascal's triangle of n lines :");
+  /*for(i=0;i<n;i++)
   {
     for(j=0;j<n;j++) 
     {
-      var k=a[i-1][j]+a[i-1][j-1];
       if(i==j || j==0)
-      a[i][j]=1;
+      a.push(1);
+      var k=a[i-1][j]+a[i-1][j-1];
       if(!(i==j || j==0))
-      a[i][j]=k
+      a.push(k);
     }
   }
-  
-  for(p=0;p<n;p++)
+  var a=[];
+  var b=[];
+    for(i=0;i<n;i++)
   {
-    for(m=0;m<=p;m++)
+    for(j=0;j<=i;j++)
     {
-      console.log(a);
+      a.push(i);
+      b.push(j);
+      var l=b[j-1].concat(a[i-1])
+      var k=a[i-1]+l;
+      if(i===j || j===0)
+      document.write(1);
+      if(!(i===j || j===0))
+      document.write(k);   
     }
-    console.log("\n");
-  }
-
+    document.write("</br>"); 
+  } */
+  function pascals(numRows) {
+    if (numRows === 0) return [];
+    if (numRows === 1) return [[1]];
+    let result = [];
+    for (let row = 1; row <= numRows; row++) {
+        let arr = [];
+        for (let col = 0; col < row; col++) {
+            if (col === 0 || col === row - 1) {
+                arr.push(1);
+            } else {
+                arr.push((result[row-2][col-1] + result[row-2][col]));
+            }
+        }
+        result.push(arr);
+    }
+    return result;
+}
+numRows = prompt("Enter an interger n to generate a pascal's triangle of n lines :");
+pascals(numRows);
     </script>
   </body>
 </html>
