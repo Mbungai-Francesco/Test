@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css1.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script>
+           function n() {
+            var a= document.getElementById('a').value ;
+            var b= document.getElementById('b').value ;
+            var c= document.getElementById('c').value ;
+            var r1= ((-b)-(((b*b)-(4*a*c))** 0.5))/(2*a);
+            var r2= ((-b)+(((b*b)-(4*a*c))** 0.5))/(2*a);
+            document.getElementById('x').value = 'roots are ' + r1 + ' or ' + r2 ;
+        }
+
+        </script>
+    </head>
+    <body >
+        <center>
+            <div class="w3-container w3-green">
+                <textarea placeholder="Enter Coef of x sqaured" id="a" cols="30" rows="1"></textarea><br>
+        <textarea placeholder="Enter Coef of x" id="b" cols="30" rows="1"></textarea><br>
+        <textarea placeholder="Enter the constant value" id="c" cols="30" rows="1"></textarea><br>
+        <input type="button" onclick="n()" value="Click"><br>
+        <textarea placeholder="Anwser" id="x" cols="30" rows="1"></textarea>
+            </div>
+        </center>
+    </body>
+</html>
